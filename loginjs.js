@@ -16,13 +16,13 @@ function resetForm() {
 function validateForm(event) {
     event.preventDefault();
     const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
+    const passwordInput = document.getElementById('password').value;  // Renamed from 'password' to 'passwordInput'
 
     // Check if username is 'admin' and password is correct
     const storedPassword = localStorage.getItem('password');
     const newPassword = localStorage.getItem('newPassword');
 
-    if (username === 'admin' && (password === storedPassword || password === newPassword)) {
+    if (username === 'admin' && (passwordInput === storedPassword || passwordInput === newPassword)) {
         hideModal();
         resetForm();
         alert('Login successful!');
